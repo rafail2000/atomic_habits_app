@@ -16,5 +16,5 @@ def send_user_message():
         if (habit.time and
             habit.time.hour == current_time.hour and
             habit.time.minute == current_time.minute):
-            print(habit)
+            print(str(habit))
             return str(habit)
