@@ -10,9 +10,11 @@ def send_user_message():
     Отправка привычки пользователю
     """
 
-    today = timezone.now().today().date()
+    current_time = timezone.now().time()
     habits = Habit.objects.all()
     for habit in habits:
-        if today == habit.time:
+        if (habit.time and
+            habit.time.hour == current_time.hour and
+            habit.time.minute == current_time.minute):
             print(habit)
             return str(habit)

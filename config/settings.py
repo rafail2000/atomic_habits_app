@@ -146,7 +146,7 @@ CELERY_BEAT_SCHEDULE = {
     "send_user_message": {
         "task": "atomic_habits.tasks.send_user_message",  # Путь к задаче
         "schedule": timedelta(
-            seconds=1
+            minutes=1
         ),  # Расписание выполнения задачи (например, каждые 10 минут)
     },
 }
