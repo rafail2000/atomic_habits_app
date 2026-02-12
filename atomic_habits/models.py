@@ -54,7 +54,7 @@ class Habit(models.Model):
         ordering = ["time"]
 
     def __str__(self):
-        return f"я буду {self.action} в {self.time} в {self.place}"
+        return f"я буду {self.action} - {self.time} - {self.place}"
 
     def clean(self):
         """
