@@ -33,6 +33,17 @@ class HabitListAPIView(ListAPIView):
     permission_classes = (IsAuthenticated, IsOwner)
 
 
+class HabitPublicListAPIView(ListAPIView):
+    """
+    Курсор для просмотра списка привычек
+    """
+
+    queryset = Habit.objects.filter(is_public=True)
+    serializer_class = HabitSerializer
+    pagination_class = CustomPagination
+    permission_classes = (IsAuthenticated,)
+
+
 class HabitRetrieveAPIView(RetrieveAPIView):
     """
     Курсор для просмотра привычки

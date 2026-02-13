@@ -9,6 +9,7 @@ app_name = AtomicHabitsConfig.name
 urlpatterns = [
     # привычки
     path("habits/", HabitListAPIView.as_view(), name="habits_list"),
+    path("public_habits/", HabitPublicListAPIView.as_view(), name="public_habits_list"),
     path("habits/<int:pk>/", HabitRetrieveAPIView.as_view(), name="habits_retrieve"),
     path("habits/create/", HabitCreateAPIView.as_view(), name="habits_create"),
     path(
