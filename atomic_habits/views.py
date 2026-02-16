@@ -32,6 +32,9 @@ class HabitListAPIView(ListAPIView):
     pagination_class = CustomPagination
     permission_classes = (IsAuthenticated, IsOwner)
 
+    def get_queryset(self):
+        return Habit.objects.filter(user=self.request.user)
+
 
 class HabitPublicListAPIView(ListAPIView):
     """
